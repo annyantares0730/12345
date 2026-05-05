@@ -135,7 +135,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--cloud);color:var(--t
 .hero-sub{font-size:clamp(24px,4.5vw,56px);font-family:'Petrona',serif;font-weight:700;color:var(--accent-light);margin-bottom:36px;line-height:1.2;text-shadow:0 2px 8px rgba(0,0,0,0.4);}
 .hero-stats{
   display:flex;justify-content:center;gap:40px;margin-bottom:44px;
-  flex-wrap:nowrap;
+  flex-wrap:wrap;
 }
 .hero-stat{text-align:center;}
 .hero-stat .val{font-family:'Petrona',serif;font-size:clamp(28px,5vw,48px);font-weight:700;color:white;line-height:1;}
@@ -890,6 +890,17 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--cloud);color:var(--t
       <div class="hero-tag">2026 Nomad at Sea</div>
       <h1>答案在深度的相遇裡</h1>
       <p class="hero-sub">改變你人生的對話<br>在海上等你</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="val">2026.11</div>
+          <div class="lbl">預計出發</div>
+        </div>
+        <div class="hero-divider"></div>
+        <div class="hero-stat">
+          <div class="val">榮耀號</div>
+          <div class="lbl">活動地點</div>
+        </div>
+      </div>
       <div class="hero-cta">
         <button class="hero-btn-secondary" onclick="document.getElementById('spirit').scrollIntoView({behavior:'smooth'})">立即了解詳情 &nbsp;↓</button>
       </div>
@@ -1177,18 +1188,21 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--cloud);color:var(--t
         <div class="qa-category" id="qa-cat-2">航程與船上體驗</div>
         <div class="qa-item" onclick="toggleQA(this)">
           <div class="qa-q">Q3：郵輪上有 WiFi 可以工作嗎？連線品質如何？<span class="arrow">▾</span></div>
-          <div class="qa-a"><b>A：</b>有的！本次的報名費已全額包含郵輪航程期間的 WiFi 費用。MSC 榮耀號採用高規格衛星網路，一般收發 Email、文字訊息、瀏覽網頁、處理雲端文件都沒問題。不過由於身處大洋之上，網路速度難免受天氣與海象影響，建議將需要大量傳輸的高畫質視訊會議（Zoom / Google Meet）或大檔案上傳下載排開。<br><br>💡 私心建議：把這幾天當作高度專注的線下人脈交流期，享受真正的高品質交流！</div>
+          <div class="qa-a"><b>A：</b>有的！本次的報名費已全額包含郵輪航程期間的 WiFi 費用。MSC 榮耀號採用高規格衛星網路，一般收發 Email、文字訊息、瀏覽網頁、處理雲端文件都沒問題。不過由於身處大洋之上，網路速度難免受天氣與海象影響，建議將需要大量傳輸的高畫質視訊會議（Zoom / Google Meet）或大檔案上傳下載排開。<br><br>💡 私心建議：把這 6 天當作高度專注的線下人脈交流期，享受真正的高品質交流！</div>
         </div>
         <div class="qa-item" onclick="toggleQA(this)">
           <div class="qa-q">Q4：出發港口與航行路線在哪裡？<span class="arrow">▾</span></div>
           <div class="qa-a"><b>A：</b>我們將從<b>「基隆港」</b>直接登船啟航，為您省去搭飛機出國的舟車勞頓，人到港口，立刻進入狀態！<br><br>本次的 6 天 5 夜航程，我們將搭乘亞洲最大旗艦郵輪「MSC 榮耀號」，駛向日本的蔚藍海域。除了船上的專屬商業論壇，您也將有充足的時間下船探索日本在地風情，享受一趟結合商務與度假的完美旅程。</div>
         </div>
         <div class="qa-item" onclick="toggleQA(this)">
-          <div class="qa-q">Q5：航程行程是怎麼安排的？<span class="arrow">▾</span></div>
+          <div class="qa-q">Q5：六天的航程行程是怎麼安排的？<span class="arrow">▾</span></div>
           <div class="qa-a"><b>A：</b>
             <b>第一天</b>：登船、啟航、開幕式、座談會。<br>
-            <b>中間</b>：石垣島靠港，交流會、社群任務、主題講座、智囊團激盪，交流會、遊牧參訪與在地探索、短講、跑關交流、結業式。<br>
-            <b>最後一天</b>：返抵基隆，賦歸。
+            <b>第二天</b>：石垣島靠港，交流會、社群任務、主題講座。<br>
+            <b>第三天</b>：宮古島靠港，交流會、主題講座、智囊團激盪。<br>
+            <b>第四天</b>：沖繩靠港，遊牧參訪與在地探索，主題講座。<br>
+            <b>第五天</b>：石垣島靠港，交流活動分享、短講、跑關交流、結業式。<br>
+            <b>第六天</b>：返抵基隆，賦歸。
           </div>
         </div>
         <div class="qa-item" onclick="toggleQA(this)">
@@ -1217,7 +1231,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--cloud);color:var(--t
         <div class="qa-item" onclick="toggleQA(this)">
           <div class="qa-q">Q9：報名費包含了哪些內容？<span class="arrow">▾</span></div>
           <div class="qa-a"><b>A：</b>只要一票在手，您在船上的生活、工作與學習需求將被全面滿足：<br><br>
-          <b>• 航程與稅金：</b>郵輪船票、所有港務費、稅金與郵輪服務費。<br>
+          <b>• 航程與稅金：</b>6 天 5 夜郵輪船票、所有港務費、稅金與郵輪服務費。<br>
           <b>• 專屬住宿：</b>依您報名時選擇的艙房等級入住。<br>
           <b>• 無限餐飲：</b>船上主餐廳每日精緻三餐，以及全天候開放的自助餐吧。<br>
           <b>• 網路連線：</b>活動提供全航程海上 WiFi，讓您遊牧不斷線！<br>
@@ -1230,7 +1244,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--cloud);color:var(--t
           <b>• 出發地交通：</b>前往基隆港登船的來回交通費用。<br>
           <b>• 證件與保險：</b>個人護照/簽證辦理費，以及個人旅遊平安險與不便險（建議自行投保）。<br>
           <b>• 岸上自費活動：</b>靠港後的自由活動交通、餐食或自費當地導覽行程。<br>
-          <b>• 個人額外消費：</b>船上衛星電話、船上的付費酒精飲料/酒水套餐、特色付費餐廳、SPA 水療、洗衣服務、賭場消費、小費等。</div>
+          <b>• 個人額外消費：</b>船上的付費酒精飲料/特調、特色付費餐廳、SPA 水療、洗衣服務、賭場消費等。</div>
         </div>
         <div class="qa-item" onclick="toggleQA(this)">
           <div class="qa-q">Q11：報名後有事不能去，可以退費嗎？<span class="arrow">▾</span></div>
