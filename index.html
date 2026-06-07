@@ -1677,7 +1677,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--cloud);color:var(--t
           <div style="font-size:12px;letter-spacing:0.08em;color:#1a6fb5;font-weight:700;margin-bottom:10px;">② 應匯金額（請自行核算）</div>
           <div style="font-size:13.5px;color:#0d2d52;line-height:2;">
             標準價　　　　　　NT$46,800<br>
-            早鳥價（7/20 前）　NT$44,800<br>
+            早鳥價（7/20 前）　折 NT$2,000<br>
             持優惠代碼　　　　再折 NT$1,000
           </div>
           <div style="font-size:12px;color:#3a6186;margin-top:8px;line-height:1.7;">＊請依您符合的優惠匯入正確金額，並保留匯款收據。</div>
@@ -1688,14 +1688,14 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--cloud);color:var(--t
           <div style="font-size:13px;color:#8c8880;line-height:1.7;">即將開放 Coming Soon — 屆時可線上快速完款。</div>
         </div>
 
-        <div style="background:#06c755;border-radius:10px;padding:14px 18px;text-align:center;">
-          <div style="font-size:13.5px;color:#fff;font-weight:700;line-height:1.75;">✅ 完款後請將匯款截圖傳給<br>官方 LINE：@421ttslw</div>
-        </div>
+        <a href="https://line.me/R/ti/p/@421ttslw" target="_blank" rel="noopener" style="display:block;background:#06c755;border-radius:10px;padding:14px 18px;text-align:center;text-decoration:none;">
+          <div style="font-size:13.5px;color:#fff;font-weight:700;line-height:1.75;">✅ 完款後請將匯款截圖傳給<br>官方 LINE：@421ttslw　▸ 點此加入</div>
+        </a>
       </div>
 
       <div style="display:flex;gap:12px;justify-content:center;margin-top:28px;flex-wrap:wrap;">
         <button onclick="showPage('home')" style="padding:12px 28px;background:white;color:var(--ocean);border:none;border-radius:8px;font-family:'Noto Sans TC',sans-serif;font-size:14px;font-weight:700;cursor:pointer;letter-spacing:0.06em;box-shadow:0 4px 16px rgba(0,0,0,0.15);">← 返回主頁</button>
-        <a href="https://lin.ee/VRj3Nax" target="_blank" style="padding:12px 28px;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);color:white;border:1.5px solid rgba(255,255,255,0.4);border-radius:8px;font-family:'Noto Sans TC',sans-serif;font-size:14px;font-weight:600;cursor:pointer;letter-spacing:0.06em;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">📣 分享給朋友</a>
+        <button onclick="shareEvent()" style="padding:12px 28px;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);color:white;border:1.5px solid rgba(255,255,255,0.4);border-radius:8px;font-family:'Noto Sans TC',sans-serif;font-size:14px;font-weight:600;cursor:pointer;letter-spacing:0.06em;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">📣 分享給朋友</button>
       </div>
     </div>
   </div>
@@ -2145,6 +2145,20 @@ function submitForm(){
       if(btn){btn.disabled=false;btn.querySelector('span').textContent='⛵ \u00a0確認送出報名 \u00a0·\u00a0 Submit Registration';}
       alert('送出時發生錯誤，請稍後再試。\n'+(err.message||err));
     });
+}
+
+function shareEvent(){
+  var text='我報名了「海上遊牧聚 Nomad at Sea」\u26F5\n'+
+           '11/25\u201329，五天四夜，把不受地點限制的工作者聚在海上。\n'+
+           '我相信你的答案在別人身上…要不要一起？\n'+
+           '\uD83D\uDC49 https://nomadatseafest.com';
+  if(navigator.share){
+    navigator.share({title:'海上遊牧聚 Nomad at Sea', text:text, url:'https://nomadatseafest.com'}).catch(function(){});
+  } else if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(function(){alert('分享文字已複製，可以直接貼給朋友！');}).catch(function(){window.prompt('複製以下文字分享給朋友：',text);});
+  } else {
+    window.prompt('複製以下文字分享給朋友：',text);
+  }
 }
 </script>
 </body>
