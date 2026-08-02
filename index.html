@@ -693,13 +693,13 @@ function render() {
       const btn = document.createElement('button');
       btn.className = 'option' + (answers[qi] === oi ? ' selected' : '');
       btn.innerHTML = `<span class="option-label">${opt.label}</span><span>${opt.text}</span>`;
-      btn.addEventListener('click', () => {
-        answers[qi] = oi;
-        document.querySelectorAll(`#q-${qi} .option`).forEach(b => b.classList.remove('selected'));
-        btn.classList.add('selected');
-        document.getElementById(`q-${qi}`).classList.add('answered');
+      btn.addEventListener('click', ((qIndex, oIndex, button) => () => {
+        answers[qIndex] = oIndex;
+        document.querySelectorAll(`#q-${qIndex} .option`).forEach(b => b.classList.remove('selected'));
+        button.classList.add('selected');
+        document.getElementById(`q-${qIndex}`).classList.add('answered');
         updateProgress();
-      });
+      })(qi, oi, btn));
       opts.appendChild(btn);
     });
 
